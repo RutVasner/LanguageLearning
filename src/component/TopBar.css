@@ -1,0 +1,16 @@
+.topBarCard {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 70px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    /* padding-top: 10px; */
+    /* margin-top: 10px; */
+}
+
+.MuiCard-root>div {
+    display: flex;
+    flex-direction: row;
+}
