@@ -5,6 +5,12 @@ import { WordsProvider } from './context/wordsContext.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Trivia from './component/Trivia.jsx'
 import "./style.css"
+import '@fontsource/noto-sans-hebrew';
+import '@fontsource/noto-serif-hebrew';
+import '@fontsource/noto-rashi-hebrew';
+import '@fontsource/ibm-plex-sans-hebrew';
+import '@fontsource/playpen-sans-hebrew';
+import '@fontsource/solitreo';
 createRoot(document.getElementById('root')).render(
     <WordsProvider>
       <BrowserRouter>

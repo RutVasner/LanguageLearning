@@ -1,0 +1,29 @@
+#detailsCard {
+  margin: auto;
+  width: 25%;
+  height: 250px;
+  margin-top: 6%;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+#cardTytle {
+  font-family: "Playpen Sans Hebrew" !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+.typoDetails {
+  font-family: "Playpen Sans Hebrew" !important;
+  font-size: 20px !important;
+  font-weight: 200 !important;
+}
+.gridDetails {
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+  align-items: center !important;
+ 
+}
