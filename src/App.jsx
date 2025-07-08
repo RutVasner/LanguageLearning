@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import openAIApi from "./apiConfig/openAIApi";
-import { useWords } from "./context/wordsContext";
-import { useNavigate } from "react-router";
+import { useWords } from "./context/WordsContext";
 import TopBar from "./component/TopBar";
-import { Card, TextField, Typography, Button } from "@mui/material";
+import { Card, TextField, Typography, Button, CircularProgress } from "@mui/material";
 import "./style.css";
 import DetailsCard from "./component/DetailsCard";
 import "@fontsource/noto-sans-hebrew";
@@ -13,15 +12,17 @@ import "@fontsource/ibm-plex-sans-hebrew";
 import "@fontsource/playpen-sans-hebrew";
 import "@fontsource/solitreo";
 import { getHebrewWordsPrompt } from "./assets/prompt";
+import { useNavigate } from "react-router-dom";
+import text from "./assets/text";
 
 function App() {
   const { words, setWords, generateStringToArr, playerDetails } = useWords();
   // const prompt = `תן לי רשימה של 10 מילים קצרות בנושא ${topic}, נפרדות בפסיק ללא רווחים, ללא משפטים נוספים.`;
   const navigate = useNavigate();
-
+  const [isLoading, setIsLoading] = useState(false);
   const getData = async () => {
-    debugger;
     try {
+      setIsLoading(true);
       const res = await openAIApi.getWordsList(
         getHebrewWordsPrompt(playerDetails)
       );
@@ -34,6 +35,7 @@ function App() {
       console.error(error);
       console.log("אירעה שגיאה בקבלת תגובה מ-OpenAI");
     } finally {
+      setIsLoading(false)
       navigate("trivia");
     }
   };
@@ -45,11 +47,11 @@ function App() {
       <DetailsCard />
       <Button
         variant="outlined"
-        className="alef-text"
+        className="startBtn"
         id="startBtn"
         onClick={getData}
       >
-        התחלה{" "}
+        {isLoading ? <CircularProgress  size={"20px"}/> : text.start}
       </Button>
     </div>
   );

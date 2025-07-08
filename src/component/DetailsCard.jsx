@@ -8,7 +8,7 @@ import "@fontsource/playpen-sans-hebrew";
 import "@fontsource/solitreo";
 
 import { Card, Grid, TextField, Typography } from "@mui/material";
-import { useWords } from "../context/wordsContext";
+import { useWords } from "./context/wordsContext";
 
 export default function DetailsCard() {
   const { playerDetails, setPlayerDetails } = useWords();

@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import { WordsProvider } from './context/wordsContext.jsx'
+import { WordsProvider } from './context/WordsContext.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Trivia from './component/Trivia.jsx'
 import "./style.css"

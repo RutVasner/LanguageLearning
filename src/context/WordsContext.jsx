@@ -19,7 +19,7 @@ export function WordsProvider({ children }) {
 
   const generateStringToArr = (rawString) => {
     debugger
-    const cleanString = rawString.replace(/\\n/g, "").replace(/\\"/g, '"');
+    let cleanString = rawString.replace(/\\n/g, "").replace(/\\"/g, '"');
     console.log(cleanString);
     if (cleanString.startsWith('"') && cleanString.endsWith('"')) {
       cleanString = cleanString.slice(1, -1);

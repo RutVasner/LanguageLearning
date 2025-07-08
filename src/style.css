@@ -9,8 +9,10 @@ body {
 #startBtn {
   background-color: white;
   width: 10%;
-  height: 1/1;
-  display: block;
+  height: 50px; /* או 100%, או כל גובה שאתה צריך */
+  display: flex;
+  justify-content: center; /* מרכז רוחבית */
+  align-items: center;     /* מרכז אנכית */
   margin-left: auto;
   margin-right: auto;
   border: none;
